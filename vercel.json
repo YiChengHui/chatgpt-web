@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "builds": [{
+      "src": "pnpm dev",
+      "use": "@vercel/static-build",
+      "config": { "zeroConfig": true }
+    },
+    {
+      "src": "/service/pnpm start",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [{
+    "src": "/(.*)",
+    "dest": "/"
+  }]
+}
